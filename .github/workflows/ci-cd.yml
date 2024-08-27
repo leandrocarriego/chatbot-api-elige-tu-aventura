@@ -42,6 +42,14 @@ jobs:
     - name: Run container
       run: |
         make run
+
+    - name: Test container
+      run: |
+        make test-container
+
+    - name: Stop and remove container
+      run: |
+        make clean
          
     - name: Deploy
       run: |
