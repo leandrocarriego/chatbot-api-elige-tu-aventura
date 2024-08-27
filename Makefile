@@ -13,16 +13,16 @@ format:
 	#format
 build:
 	#build container
-	docker-compose build
+	docker build -t entelai-api .
 run:
 	#run docker
-	docker-compose up -d
+	docker run --name entelai-app -d -p 5000:5000 entelai-api
 test-container:
 	#test container
 	sleep 10
 	curl --fail http://localhost:5000/ || exit 1
 clean:
-	docker-compose down
+	docker rm -f entelai-app || true
 deploy:
 	#deploy
 all: install lint test format build run deploy
