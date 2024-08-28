@@ -1,8 +1,9 @@
-from flask import Flask, Response, json
+from flask import Flask
 from flasgger import Swagger, LazyJSONEncoder
 
 from .config import Config, db, migrations, swagger_template, swagger_config
 from .api import api as api_routes
+
 
 def create_app():
     app = Flask(__name__)
@@ -23,3 +24,4 @@ def create_app():
 def run_server():
     app = create_app()
     app.run(host=Config.HOST, port=Config.PORT, debug=Config.DEBUG)
+    
