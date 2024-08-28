@@ -1,6 +1,5 @@
-from src import app
+from src import run_server
+
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",
-            port=5000,
-            debug=True)
+    run_server()
