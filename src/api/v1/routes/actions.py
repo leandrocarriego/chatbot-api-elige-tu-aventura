@@ -1,14 +1,24 @@
-from flask import request, Response, json, Blueprint, jsonify
-from flasgger import swag_from
+from flask import Blueprint, jsonify
+from pydantic import ValidationError
 
 from src.services import start_adventure
-from src.models import Node, Option
-from src.config import Config, db, migrations, swagger_template, swagger_config
+from src.api.v1.schemas import NodeResponse
 
 routes = Blueprint("actions", __name__)
 
 @routes.route('/start', methods = ["POST"])
 def start():
-    """Inicia la aventura y devuelve la primera elección."""
-    adventure_start = start_adventure()
-    return jsonify(adventure_start), 200
+    try:
+        response_data = start_adventure()
+
+        if response_data is None:
+            return jsonify({"error": "Data no exists"}), 404
+        
+        response = NodeResponse(**response_data)
+    
+        return jsonify(response.dict()), 200
+
+    except ValidationError as e:
+        return jsonify(e.errors()), 422
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

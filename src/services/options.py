@@ -1,9 +1,8 @@
 from src.models import Option
 
 
-def choose_option(choice_id):
-    """Función para manejar la elección del usuario."""
-    option = Option.query.filter_by(id=choice_id).first()
+def choose_option(option_id):
+    option = Option.query.filter_by(id=option_id).first()
     
     if not option:
         return None

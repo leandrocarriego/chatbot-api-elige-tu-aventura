@@ -1,6 +1,8 @@
 IMAGE_NAME=entelai-app
 CONTAINER_NAME=entelai-container
 
+.PHONY: all test
+
 install:
 	#install dependencies
 	pip install --upgrade pip &&\
@@ -8,7 +10,7 @@ install:
 lint:
 	#lint
 test:
-	#test
+	pytest
 format:
 	#format
 build:
@@ -20,7 +22,7 @@ run:
 test-container:
 	#test container
 	sleep 10
-	curl --fail http://localhost:5000/ || exit 1
+	curl --fail http://localhost:5000/api/v1/ || exit 1
 clean:
 	docker rm -f entelai-app || true
 deploy:
