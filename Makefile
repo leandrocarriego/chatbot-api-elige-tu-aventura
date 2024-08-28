@@ -9,6 +9,7 @@ install:
 	pip install -r requirements.txt
 lint:
 	#lint
+	pylint --disable=R,C *.py src/*.py tests/*.py common/*.py
 test:
 	pytest
 format:

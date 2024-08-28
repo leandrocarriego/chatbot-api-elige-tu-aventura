@@ -12,10 +12,8 @@ def create_app():
     db.init_app(app)
     migrations.init_app(app, db)
     
-    from .models import Node, Option
-
     app.json_encoder = LazyJSONEncoder
-    swagger = Swagger(app, template=swagger_template,config=swagger_config)
+    Swagger(app, template=swagger_template,config=swagger_config)
 
     app.register_blueprint(api_routes, url_prefix="/api")
 

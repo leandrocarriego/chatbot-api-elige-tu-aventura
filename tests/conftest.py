@@ -1,13 +1,12 @@
 from flask import Flask
 import pytest
-from src.app import create_app
 from src.config import Config, db, migrations
 from src.api import api as api_routes
 from common import seed_database
 
 
 @pytest.fixture(scope='session')
-def app():
+def test_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
@@ -19,8 +18,6 @@ def app():
     db.init_app(app)
     migrations.init_app(app, db)
     
-    from src.models import Node, Option
-
     app.register_blueprint(api_routes, url_prefix="/api")
 
     with app.app_context():
