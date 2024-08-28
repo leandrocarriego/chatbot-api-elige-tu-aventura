@@ -33,5 +33,5 @@ def test_app():
 
 
 @pytest.fixture(scope="session")
-def client(test_app):
+def client(test_app): # pylint: disable=redefined-outer-name
     return test_app.test_client()
