@@ -1,6 +1,9 @@
 # Chatbot 'Elige tu propia aventura' API
 
-[![CI/CD](https://github.com/leandrocarriego/chatbot-api-elige-tu-aventura/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/leandrocarriego/chatbot-api-elige-tu-aventura/actions/workflows/ci-cd.yml)
+[![Check code lint](https://github.com/leandrocarriego/chatbot-api-elige-tu-aventura/actions/workflows/lint.yml/badge.svg)](https://github.com/leandrocarriego/chatbot-api-elige-tu-aventura/actions/workflows/lint.yml)
+[![Run tests](https://github.com/leandrocarriego/chatbot-api-elige-tu-aventura/actions/workflows/test.yml/badge.svg)](https://github.com/leandrocarriego/chatbot-api-elige-tu-aventura/actions/workflows/test.yml)
+[![Build and test container](https://github.com/leandrocarriego/chatbot-api-elige-tu-aventura/actions/workflows/test-container.yml/badge.svg)](https://github.com/leandrocarriego/chatbot-api-elige-tu-aventura/actions/workflows/test-container.yml)
+[![Deploy](https://github.com/leandrocarriego/chatbot-api-elige-tu-aventura/actions/workflows/deploy.yml/badge.svg)](https://github.com/leandrocarriego/chatbot-api-elige-tu-aventura/actions/workflows/deploy.yml)
 
 
 ## Descripción
