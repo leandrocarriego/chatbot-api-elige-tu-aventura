@@ -11,9 +11,11 @@ lint:
 	#lint
 	pylint --disable=R,C *.py src/*.py tests/*.py common/*.py
 test:
+	#test
 	pytest
 format:
 	#format
+	black *.py src/*.py tests/*.py common/*.py
 build:
 	#build container
 	docker build -t entelai-api .

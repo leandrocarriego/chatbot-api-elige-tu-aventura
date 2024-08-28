@@ -11,14 +11,14 @@ def create_app():
 
     db.init_app(app)
     migrations.init_app(app, db)
-    
+
     app.json_encoder = LazyJSONEncoder
-    Swagger(app, template=swagger_template,config=swagger_config)
+    Swagger(app, template=swagger_template, config=swagger_config)
 
     app.register_blueprint(api_routes, url_prefix="/api")
 
     return app
 
+
 def run_server(app):
     app.run(host=Config.HOST, port=Config.PORT, debug=Config.DEBUG)
-    
