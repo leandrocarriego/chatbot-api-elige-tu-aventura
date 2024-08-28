@@ -1,5 +1,6 @@
-from src import run_server
+from src import create_app, run_server
 
 
 if __name__ == "__main__":
-    run_server()
+    app = create_app()
+    run_server(app)

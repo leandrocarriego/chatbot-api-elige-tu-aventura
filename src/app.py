@@ -21,7 +21,6 @@ def create_app():
 
     return app
 
-def run_server():
-    app = create_app()
+def run_server(app):
     app.run(host=Config.HOST, port=Config.PORT, debug=Config.DEBUG)
     
