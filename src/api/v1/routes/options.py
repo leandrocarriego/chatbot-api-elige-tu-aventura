@@ -1,12 +1,22 @@
-from flask import request, Response, json, Blueprint
+from flask import request, Response, json, Blueprint, jsonify
+
+from src.services import choose_option
 
 
 routes = Blueprint("options", __name__)
 
-@routes.route('/choose', methods = ["GET", "POST"])
+@routes.route('/choose', methods = ["POST"])
 def choose():
-    return Response(
-        response=json.dumps({'status': "success"}),
-        status=200,
-        mimetype='application/json'
-    )
+    """Recibe la elección del usuario y devuelve las siguientes opciones o el resultado final."""
+    data = request.json
+    choice_id = data.get('choice_id')
+    
+    if choice_id is None:
+        return jsonify({"error": "choice_id is required"}), 400
+    
+    result = choose_option(choice_id)
+    
+    if result is None:
+        return jsonify({"error": "Invalid choice"}), 404
+    
+    return jsonify(result), 200

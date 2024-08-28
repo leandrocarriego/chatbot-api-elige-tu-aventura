@@ -7,9 +7,11 @@ load_dotenv()
 
 class Config:
     DEBUG = False
-    ENV= os.getenv('ENV')
-    DATABASE_NAME = os.getenv('DATABASE_NAME')
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(DATABASE_NAME + '.db')
-    HOST= os.getenv('HOST')
-    PORT= os.getenv('PORT')
-    SECRET_KEY = os.getenv('SECRET_KEY')
+class Config:
+    DEBUG = False
+    ENV = os.getenv('ENV', 'production')
+    HOST = os.getenv('HOST', '0.0.0.0')
+    PORT = os.getenv('PORT', '5000')
+    SECRET_KEY = os.getenv('SECRET_KEY', 'False')
+    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'sqlite:///database.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = os.getenv('SQLALCHEMY_TRACK_MODIFICATIONS', 'False')
