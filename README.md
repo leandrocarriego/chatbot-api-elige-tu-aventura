@@ -8,7 +8,7 @@
 
 ## Descripción
 
-Esta API permite a los usuarios interactuar con un chatbot que simula una aventura interactiva al estilo "Elige tu propia aventura". 
+Esta API permite a los usuarios interactuar con un chatbot que simula una aventura interactiva al estilo "Elige tu propia aventura".
 Los usuarios pueden iniciar aventuras y elegir opciones que afecten el desarrollo de la historia.
 (Elegir la opcion de PHP, recomendado :flushed:)
 
@@ -109,7 +109,7 @@ Antes de empezar, asegúrate de tener instalados los siguientes programas en tu 
 
    - **Inicio de aventura**:
      - Método: `POST`
-     - URL: 
+     - URL:
        ```
        https://chatbot-api-elige-tu-aventura.vercel.app/api/v1/start
        ```
@@ -120,7 +120,7 @@ Antes de empezar, asegúrate de tener instalados los siguientes programas en tu 
 
    - **Elegir opción**:
      - Método: `POST`
-     - URL: 
+     - URL:
        ```
        https://chatbot-api-elige-tu-aventura.vercel.app/api/v1/choose
        ```
@@ -131,4 +131,3 @@ Antes de empezar, asegúrate de tener instalados los siguientes programas en tu 
        }
        ```
      - Reemplaza `"opción_elegida"` con la opción que deseas elegir en la aventura.
-

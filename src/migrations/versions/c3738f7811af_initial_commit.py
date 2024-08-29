@@ -1,7 +1,7 @@
 """Initial commit
 
 Revision ID: c3738f7811af
-Revises: 
+Revises:
 Create Date: 2024-08-28 10:24:51.036068
 
 """

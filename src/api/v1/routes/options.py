@@ -40,9 +40,9 @@ def choose():
 
         if response_data is None:
             return jsonify({"error": "Invalid option"}), 404
-        
+
         response = NodeResponse(**response_data)
-    
+
         return jsonify(response.dict()), 200
 
     except ValidationError as e:
